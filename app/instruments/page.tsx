@@ -11,7 +11,8 @@ export default function Jobs() {
   useEffect(() => {
     const fetchJobs = async () => {
       const supabase = createClient();
-      const { data } = await supabase.from('jobs').select();
+      const { data } = await supabase.from('jobs').select()
+        .order("imageId", { ascending: false });
       setJobs(data || []);
     };
     fetchJobs();
@@ -71,11 +72,18 @@ export default function Jobs() {
 
           {selectedJob.photo && (
             <>
-              <img
-                src={selectedJob.photo}
-                alt={selectedJob.title}
-                className="w-full max-w-full max-w-3xl h-64 object-cover rounded-lg mb-4 mx-auto"
-              />
+             <div className="w-full">
+    <img
+      
+  width={0}
+ 
+  
+  style={{ width: '100%', height: 'auto' }} //
+      src={selectedJob.photo}
+      alt={selectedJob.title}
+      className="w-full h-full object-cover"
+    />
+  </div>
 
               <div className="max-w-3xl mx-auto flex items-center bg-yellow-100 border border-yellow-400 text-yellow-800 text-sm rounded-lg p-3 mb-8">
                 <div className="flex-1">
