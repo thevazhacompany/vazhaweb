@@ -53,7 +53,7 @@ export default function Jobs() {
           </div>
         </div>
       ) : (
-        <div className="fixed inset-0 bg-white overflow-auto z-50 p-6 pt-20 mb-20">
+        <div className="fixed inset-0 bg-white overflow-auto z-50 p-6 pt-20 pb-20">
           {/* Header */}
           <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
             <div className="max-w-3xl mx-auto px-6 py-4 flex items-center gap-3">

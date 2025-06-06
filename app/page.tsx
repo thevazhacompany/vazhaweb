@@ -43,12 +43,12 @@ export default async function Home() {
       </main>
 
       {/* 🟢 Transparent Green Footer */}
-      <footer className="bg-white text-green mt-10 py-4 fixed bottom-0 left-0 right-0 z-50">
-        <div className="max-w-5xl mx-auto px-4 flex justify-between items-center">
-          <a href="/privacyPolicy" className="underline cursor-pointer">
+      <footer className="bg-green-900/80 text-white px-4 py-2 fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl shadow-lg backdrop-blur-sm font-sans text-sm tracking-wide font-medium">
+        <div className="max-w-5xl mx-auto flex justify-between items-center">
+          <a href="/privacyPolicy" className="underline hover:text-green-200 transition">
             Privacy Policy
           </a>
-          <a href="/privacyPolicy" className="underline cursor-pointer">
+          <a href="/privacyPolicy" className="underline hover:text-green-200 transition">
             Terms & Conditions
           </a>
         </div>
