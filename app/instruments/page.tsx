@@ -35,7 +35,6 @@ export default function Jobs() {
                   {job.photo && (
                     <img
                       src={job.photo}
-                      alt={job.title}
                       className="w-full max-w-full h-40 object-cover"
                     />
                   )}

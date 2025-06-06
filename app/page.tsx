@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import { hasEnvVars } from "@/utils/supabase/check-env-vars";
 import Instruments from "./instruments/page";
 import GoogleAd from "./GoogleAd";
 
@@ -42,6 +41,18 @@ export default async function Home() {
         <GoogleAd />
         <Instruments />
       </main>
+
+      {/* 🟢 Transparent Green Footer */}
+      <footer className="bg-white-600/50 backdrop-blur-sm text-black mt-10 py-4 fixed bottom-0 left-0 right-0 z-50">
+        <div className="max-w-5xl mx-auto px-4 flex justify-between items-center">
+          <a href="/privacyPolicy" className="underline cursor-pointer">
+            Privacy Policy
+          </a>
+          <a href="/privacyPolicy" className="underline cursor-pointer">
+            Terms & Conditions
+          </a>
+        </div>
+      </footer>
     </>
   );
 }
