@@ -18,8 +18,8 @@ export default function Jobs() {
     fetchJobs();
   }, []);
 
-  return (
-    <div className="min-h-screen bg-gray-50">
+  return ( 
+    <div className="min-h-screen ">
       {!selectedJob ? (
         <div className="flex justify-center px-4 pt-6">
           <div className="w-full max-w-md space-y-4 pb-12">
@@ -53,7 +53,7 @@ export default function Jobs() {
           </div>
         </div>
       ) : (
-        <div className="fixed inset-0 bg-white overflow-auto z-50 p-6 pt-20">
+        <div className="fixed inset-0 bg-white overflow-auto z-50 p-6 pt-20 mb-20">
           {/* Header */}
           <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
             <div className="max-w-3xl mx-auto px-6 py-4 flex items-center gap-3">
@@ -175,7 +175,7 @@ export default function Jobs() {
             return (
               <a
                 href={mailtoLink}
-                className="fixed bottom-6 right-6 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 transition-colors z-60 flex items-center gap-2"
+                className="fixed bottom-6 right-6 bg-green-600 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-700 transition-colors z-60 flex items-center gap-2 mb-20"
                 target="_blank"
                 rel="noopener noreferrer"
               >
