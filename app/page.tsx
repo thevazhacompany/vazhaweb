@@ -37,18 +37,37 @@ export default async function Home() {
       </header>
 
       {/* 📄 Main Content */}
-      <main className="pt-20 flex-1 flex flex-col gap-6 px-4 max-w-3xl mx-auto">
-        <GoogleAd />
+      <main className="pt-20 flex-1 flex flex-col gap-6 px-4 max-w-3xl mx-auto text-gray-800 font-sans">
+        <h2 className="text-2xl font-bold text-green-800">Welcome to VAZHA — Your Job Companion</h2>
+        <p>
+          VAZHA is a mobile and web app designed to help students, freshers, and job seekers find the latest job listings and apply quickly with ease.
+        </p>
+        <p>
+          Whether you are a final-year student or a job-hunting fresher, VAZHA provides instant job alerts and simple apply options to support your career journey.
+        </p>
+        <ul className="list-disc list-inside text-green-700 font-medium">
+          <li>🔍 Thousands of jobs listed</li>
+          <li>📬 Regular job updates</li>
+          <li>🔔 Instant notifications to keep you updated</li>
+        </ul>
+
+        {/* Google Ad with small fixed height container */}
+
+
         <Instruments />
+        <GoogleAd />
       </main>
 
       {/* 🟢 Transparent Green Footer */}
       <footer className="bg-green-900/80 text-white px-4 py-2 fixed bottom-0 left-0 right-0 z-50 rounded-t-2xl shadow-lg backdrop-blur-sm font-sans text-sm tracking-wide font-medium">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <a href="/privacyPolicy" className="underline hover:text-green-200 transition">
+          <a href="/privacy" className="underline hover:text-green-200 transition">
             Privacy Policy
           </a>
-          <a href="/privacyPolicy" className="underline hover:text-green-200 transition">
+          <a href="/contact" className="underline hover:text-green-200 transition">
+            Contact
+          </a>
+          <a href="/terms" className="underline hover:text-green-200 transition">
             Terms & Conditions
           </a>
         </div>
