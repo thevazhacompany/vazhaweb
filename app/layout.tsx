@@ -5,6 +5,16 @@ import './globals.css';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    const isAndroid = /android/.test(userAgent);
+    const hasVisited = localStorage.getItem('vazha_android_redirect');
+
+    if (isAndroid && !hasVisited) {
+      localStorage.setItem('vazha_android_redirect', 'true');
+      setTimeout(() => {
+        window.location.href = 'https://play.google.com/store/apps/details?id=com.thevazhacompany.vazhaApp';
+      }, 1500); // Delay so it's not jarring
+    }
     const adClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
 
     if (!adClient) {
@@ -14,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client="+adClient;
+    script.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=" + adClient;
     script.crossOrigin = "anonymous";
     document.head.appendChild(script);
   }, []);
