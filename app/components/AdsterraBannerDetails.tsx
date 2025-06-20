@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function AdsterraBanner320x50() {
+export default function AdsterraBanner() {
     useEffect(() => {
         const configScript = document.createElement("script");
         configScript.type = "text/javascript";
@@ -22,12 +22,12 @@ export default function AdsterraBanner320x50() {
         script.src = process.env.NEXT_PUBLIC_ADSTERRA_320X50_SRC!;
         script.async = true;
         script.dataset.cfasync = "false";
-        document.getElementById("adsterra-320x50")?.appendChild(script);
+        document.getElementById("adsterra-320")?.appendChild(script);
     }, []);
 
     return (
         <div
-            id="adsterra-320x50"
+            id="adsterra-320"
             className="w-full flex justify-center items-center my-4 min-h-[50px] "
         >
         </div>

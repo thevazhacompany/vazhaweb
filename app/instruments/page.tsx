@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { createClient } from '@/utils/supabase/client';
 import AdsterraBanner from '../components/AdsterraBanner';
+import AdsterraBannerDt from '../components/AdsterraBannerDetails';
 import MonetagInterstitialOnClick from '../components/MonetagInterstitial';
 
 export default function Jobs() {
@@ -35,7 +36,7 @@ export default function Jobs() {
                   key={job.imageId || job.id}
                   onClick={() => {
                     setSelectedJob(job);
-                    setShowInterstitial(job.showAd?true:false); // Show ad
+                    setShowInterstitial(job.showAd ? true : false); // Show ad
                   }}
                   className="cursor-pointer bg-white rounded-xl overflow-hidden border border-gray-200 shadow-sm hover:shadow-md transition duration-200"
                 >
@@ -43,7 +44,7 @@ export default function Jobs() {
                     <img
                       src={job.photo}
                       className="w-full max-w-full h-40 object-cover"
-                      
+
                     />
                   )}
                   <div className="p-4">
@@ -62,7 +63,7 @@ export default function Jobs() {
         </div>
       ) : (
         <div className="fixed inset-0 bg-white overflow-auto z-50 p-6 pt-20 pb-20">
-          <AdsterraBanner />
+
           <header className="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
             <div className="max-w-3xl mx-auto px-6 py-4 flex items-center gap-3">
               <img src="/vazha.png" alt="Vazha Logo" className="h-8 w-auto object-contain" />
@@ -76,7 +77,7 @@ export default function Jobs() {
           >
             ← Back to Jobs
           </button>
-
+          <AdsterraBannerDt />
           {selectedJob.photo && (
             <>
               <div className="w-full">
