@@ -2,9 +2,6 @@
 
 import { useEffect, useState } from 'react';
 import { createClient } from '@/utils/supabase/client';
-import AdsterraBanner from '../components/AdsterraBanner';
-import AdsterraBannerDt from '../components/AdsterraBannerDetails';
-import MonetagInterstitialOnClick from '../components/MonetagInterstitial';
 
 export default function Jobs() {
   const [jobs, setJobs] = useState<any[]>([]);
@@ -23,8 +20,6 @@ export default function Jobs() {
 
   return (
     <div className="min-h-screen">
-      {showInterstitial && <MonetagInterstitialOnClick />}
-
       {!selectedJob ? (
         <div className="flex justify-center px-4 pt-6">
           <div className="w-full max-w-md space-y-4 pb-12">
@@ -77,7 +72,6 @@ export default function Jobs() {
           >
             ← Back to Jobs
           </button>
-          <AdsterraBannerDt />
           {selectedJob.photo && (
             <>
               <div className="w-full">

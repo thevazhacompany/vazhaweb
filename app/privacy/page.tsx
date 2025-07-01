@@ -51,8 +51,6 @@ export default function PrivacyPolicy() {
         <li><a href="https://support.google.com/admob/answer/6128543?hl=en" target="_blank" className="text-blue-600 underline">AdMob</a></li>
         <li><a href="https://firebase.google.com/support/privacy" target="_blank" className="text-blue-600 underline">Firebase (Analytics & Crashlytics)</a></li>
         <li><a href="https://expo.dev/privacy" target="_blank" className="text-blue-600 underline">Expo</a></li>
-        <li><a href="https://adsterra.com/privacy-policy/" target="_blank" className="text-blue-600 underline">Adsterra</a></li>
-        <li><a href="https://monetag.com/privacy" target="_blank" className="text-blue-600 underline">Monetag</a></li>
       </ul>
       <p className="mb-4">
         These services may use cookies, pixels, and similar technologies to personalize ads, analyze traffic, and improve performance. Their data practices are governed by their respective privacy policies.

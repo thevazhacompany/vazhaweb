@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Instruments from "./instruments/page";
 import GoogleAd from "./GoogleAd";
-import AdsterraBanner from './components/AdsterraBanner';
 import AppBanner from './components/AppBanner';
 export default async function Home() {
   return (
@@ -51,13 +50,9 @@ export default async function Home() {
           <li>📬 Regular job updates</li>
           <li>🔔 Instant notifications to keep you updated</li>
         </ul>
-
         {/* Google Ad with small fixed height container */}
         <AppBanner />
-        {/* 💰 Adsterra Ad Banner */}
-        <AdsterraBanner />
         <Instruments />
-
         <GoogleAd />
       </main>
 
