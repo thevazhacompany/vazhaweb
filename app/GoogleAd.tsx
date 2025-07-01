@@ -30,7 +30,7 @@ export default function GoogleAd() {
       style={{ display: 'block' }}
       data-ad-client={adClient}
       data-ad-slot={adSlot}
-      data-ad-format="auto"
+      data-ad-format="horizontal"
       data-full-width-responsive="true"
       ref={adRef}
     />

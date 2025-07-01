@@ -52,8 +52,9 @@ export default async function Home() {
         </ul>
         {/* Google Ad with small fixed height container */}
         <AppBanner />
+         <GoogleAd />
         <Instruments />
-        <GoogleAd />
+       
       </main>
 
       {/* 🟢 Transparent Green Footer */}
