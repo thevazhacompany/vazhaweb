@@ -52,9 +52,9 @@ export default async function Home() {
         </ul>
         {/* Google Ad with small fixed height container */}
         <AppBanner />
-         <GoogleAd />
+        <GoogleAd slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT} />
         <Instruments />
-       
+
       </main>
 
       {/* 🟢 Transparent Green Footer */}

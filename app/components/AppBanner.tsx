@@ -7,7 +7,7 @@ export default function AppBanner() {
     const [isAndroid, setIsAndroid] = useState(false);
     const [isIOS, setIsIOS] = useState(false);
 
-    useEffect(() => {debugger
+    useEffect(() => {
         const dismissed = localStorage.getItem('vazha_app_banner_dismissed');
         if (dismissed === 'true') return;
 

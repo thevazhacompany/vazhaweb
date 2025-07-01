@@ -2,37 +2,42 @@
 
 import { useEffect, useRef } from 'react';
 
-export default function GoogleAd() {
-  const adRef = useRef<HTMLModElement | null>(null);
+declare global {
+  interface Window {
+    adsbygoogle: unknown[];
+  }
+}
+
+
+
+export default function GoogleAd({ slot }: any) {
+  const adRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    try {
-      if (typeof window !== 'undefined') {
-        // @ts-ignore
+    const adSlot = adRef.current?.querySelector('.adsbygoogle') as HTMLElement;
+
+    // Prevent duplicate push on SSR hydration or re-renders
+    if (adSlot && !adSlot.getAttribute('data-adsbygoogle-status')) {
+      try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (e) {
+        console.warn('AdSense push error:', e);
       }
-    } catch (e) {
-      console.error('AdSense error:', e);
     }
   }, []);
 
   const adClient = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
-  const adSlot = process.env.NEXT_PUBLIC_ADSENSE_SLOT;
-
-  if (!adClient || !adSlot) {
-    console.error('Missing AdSense env variables');
-    return null;
-  }
 
   return (
-    <ins
-      className="adsbygoogle"
-      style={{ display: 'block' }}
-      data-ad-client={adClient}
-      data-ad-slot={adSlot}
-      data-ad-format="horizontal"
-      data-full-width-responsive="true"
-      ref={adRef}
-    />
+    <div ref={adRef} key={slot}>
+      <ins
+        className="adsbygoogle"
+        style={{ display: 'block' }}
+        data-ad-client={adClient}
+        data-ad-slot={slot}
+        data-ad-format="horizontal"
+        data-full-width-responsive="true"
+      />
+    </div>
   );
 }
