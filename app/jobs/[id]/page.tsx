@@ -50,7 +50,7 @@ export default function JobDetails() {
           >
             ← Back to Jobs
           </button>
-          <GoogleAd slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT}/>
+          <GoogleAd slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT2} />
           {/* Job Image */}
           {job.photo && (
             <img
@@ -174,7 +174,7 @@ export default function JobDetails() {
           </div>
         </div>
       )}
-      <GoogleAd slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT2}/>
+
     </div>
   );
 }
